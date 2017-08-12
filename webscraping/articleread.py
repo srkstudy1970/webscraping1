@@ -2,6 +2,7 @@
 for a given URL this program gets all the url's and prints them this is done using BeautifulSoup package
 it also has the logging feature, the log file is mylog.txt
 this is clean code
+adding this to check if it gets to github
 '''
 
 from bs4 import BeautifulSoup
