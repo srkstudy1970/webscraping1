@@ -58,15 +58,20 @@ print(bagofwardspath)
 # want to remove stop words, punctuation, from a bag of words and then count the positive and negative words
 
 #stopwords=["a","the","The","is","if","but","about","and","if","but"]
-stopwords=open(stopwordspath,"r").read()
+stopwords=open(stopwordspath,"r").read().lower()
 #print(stopwords)
 logger.info("After reading stopwords file")
 punctuation=[",",".","?",":",";","?","{","}","[","]","(",")","|"]
 poswords=["good","super","excellent","beautiful","welcomes"]
 negwords=["bad","ugly","stupid","bastard","fool"]
 #bagofwords= ["My","name","is","ravi","the","a",",","?","good","bad","ugly","beautiful","stupid", "KRISHNA", "ABOUT","about","ALMOST","almost","RAVI"]
-bagofwords=open(bagofwardspath,"r").read()
+bagofwords=open(bagofwardspath,"r").read().split()
 logger.info("After reading test file")
+
+################################################# Term Frequency ############################################
+
+############################################################################################################
+
 
 ######################################## FILE INFO #################################
 # the file size, file path ,number of characters and number of lines in a file,
@@ -95,9 +100,9 @@ logger.info("########### This info about the files being read ###########")
 logger.info("Starting List of Stop words -->Total number of words: "+str(len(bagofwords)))
 
 #convert all to lower case
-#print("Before converting to lower case -->" + str(bagofwords))
+print("Before converting to lower case -->" + str(bagofwords[0:100]))
 bagofwords = [item.lower() for item in bagofwords] # This is super efficient code !!!!!
-#print("After converting to lower case -->" + str(bagofwords))
+print("After converting to lower case -->" + str(bagofwords))
 logger.info("After converting to lower case -->")
 
 #remove repeat words ??? this should not be applied for all text analysis , doing this here for learning
